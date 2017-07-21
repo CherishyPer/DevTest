@@ -1,0 +1,41 @@
+iText 相关API
+
+1.创建文档
+
+	Document document = new Document();
+2.建立书写器（Writer）与文档对象（document）关联，通过书写器将文档写入磁盘
+
+    PdfWriter writer = PdfWriter.getInstance(document, file);
+3.文档加密
+
+	writer.setEncryption(USER_PASSWORD.getBytes(),
+                    OWNER_PASSWORD.getBytes(), PdfWriter.ALLOW_PRINTING,
+                    PdfWriter.ENCRYPTION_AES_128);
+4.打开文档
+
+	document.open();
+5.PDF 元素类型
+
+	1.Paragraph 文本
+	2.Section	区域
+	3.Chapter  章节
+	4.PdfPCell 单元格
+	5.Image  图片
+	6.PdfPTable  表格
+	7.List  列表
+		List.ORDERED，List.UNORDERED
+        RomanList
+        GreekList
+        ZapfDingbatsList
+
+6.添加元素到文档
+
+    document.add(element)
+
+7.参考文档
+
+    http://www.cnblogs.com/xiaoSY-learning/p/5805577.html
+    http://www.cnblogs.com/chenpi/p/5534595.html
+    http://blog.csdn.net/wanghuan203/article/details/9112473
+    https://yq.aliyun.com/articles/35068
+    http://blog.csdn.net/u012643122/article/details/44648017
